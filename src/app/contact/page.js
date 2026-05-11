@@ -1,11 +1,64 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, MessageSquare } from "lucide-react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function ContactPage() {
+  const formRef = useRef();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    // Web3Forms Access Key
+    formData.append("access_key", "82145aaf-b1f3-4fcc-8834-5a0a3701c5b1"); 
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const loadingToast = toast.loading("Sending your message...");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json
+      }).then((res) => res.json());
+
+      if (res.success) {
+        toast.update(loadingToast, { 
+          render: "Message sent successfully! 🚀", 
+          type: "success", 
+          isLoading: false, 
+          autoClose: 5000 
+        });
+        event.target.reset(); // ফরম রিসেট হবে
+      } else {
+        toast.update(loadingToast, { 
+          render: "Something went wrong. Please try again.", 
+          type: "error", 
+          isLoading: false, 
+          autoClose: 5000 
+        });
+      }
+    } catch (error) {
+      toast.update(loadingToast, { 
+        render: "Network error. Please check your connection.", 
+        type: "error", 
+        isLoading: false, 
+        autoClose: 5000 
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#0a0a0a] pt-32 pb-20 px-4">
+      <ToastContainer theme="dark" />
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section */}
@@ -58,7 +111,7 @@ export default function ContactPage() {
             </div>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Contact Form with Web3Forms */}
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -69,29 +122,29 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold">Send a Message</h2>
             </div>
 
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Full Name</label>
-                  <input type="text" placeholder="John Doe" className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-blue-500 transition-all" />
+                  <input name="name" required type="text" placeholder="John Doe" className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-blue-500 transition-all text-white" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Email Address</label>
-                  <input type="email" placeholder="john@example.com" className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-blue-500 transition-all" />
+                  <input name="email" required type="email" placeholder="john@example.com" className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-blue-500 transition-all text-white" />
                 </div>
               </div>
 
               <div className="space-y-2">
                 <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Website URL</label>
-                <input type="url" placeholder="https://yourwebsite.com" className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-blue-500 transition-all" />
+                <input name="website" type="url" placeholder="https://yourwebsite.com" className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-blue-500 transition-all text-white" />
               </div>
 
               <div className="space-y-2">
                 <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">How can we help?</label>
-                <textarea rows="4" placeholder="Tell us about your project..." className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-blue-500 transition-all resize-none"></textarea>
+                <textarea name="message" required rows="4" placeholder="Tell us about your project..." className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-blue-500 transition-all resize-none text-white"></textarea>
               </div>
 
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-5 rounded-2xl flex items-center justify-center gap-3 transition-all hover:scale-[1.02] active:scale-95 shadow-xl shadow-blue-500/20">
+              <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-5 rounded-2xl flex items-center justify-center gap-3 transition-all hover:scale-[1.02] active:scale-95 shadow-xl shadow-blue-500/20">
                 Send Proposal <Send size={18} />
               </button>
             </form>
