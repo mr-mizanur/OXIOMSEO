@@ -98,7 +98,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-bold mb-2">Call Us</h3>
               <p className="text-gray-400 text-sm mb-4">Mon-Fri from 9am to 6pm.</p>
-              <p className="text-cyan-400 font-medium">+1 (555) 000-1234</p>
+              <p className="text-cyan-400 font-medium">+880 15061664</p>
             </div>
 
             <div className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-blue-500/30 transition-all group">
