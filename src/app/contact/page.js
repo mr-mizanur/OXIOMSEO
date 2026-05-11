@@ -107,7 +107,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-bold mb-2">Visit Us</h3>
               <p className="text-gray-400 text-sm mb-4">Come say hello at our office.</p>
-              <p className="text-blue-500 font-medium">123 SEO Tower, Silicon Valley, CA</p>
+              <p className="text-blue-500 font-medium">Dhaka, Bangladesh</p>
             </div>
           </motion.div>
 
