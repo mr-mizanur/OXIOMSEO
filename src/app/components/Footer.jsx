@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast, ToastContainer } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css'; 
+import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -108,7 +109,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Newsletter Section */}
+      
         <div>
           <h4 className="text-white font-bold mb-6">Newsletter</h4>
           <p className="text-gray-500 text-sm mb-4">Get the latest SEO insights.</p>
@@ -132,14 +133,14 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+      
       <div className="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-gray-600 text-xs text-center md:text-left">
           © {currentYear} Oxiom SEO Agency. All rights reserved.
         </p>
         <div className="flex gap-8 text-xs text-gray-600">
-          <span className="hover:text-white cursor-pointer">Privacy Policy</span>
-          <span className="hover:text-white cursor-pointer">Terms of Service</span>
+          <Link href='/privacy' className="hover:text-white cursor-pointer">Privacy Policy</Link>
+          <Link href='/termsofservice' className="hover:text-white cursor-pointer">Terms of Service</Link>
         </div>
       </div>
     </footer>
