@@ -1,10 +1,22 @@
+// app/sitemap.js
+
 export default function sitemap() {
-  return [
-    {
-      url: 'https://oxiomseo.vercel.app',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-  ]
+  const baseUrl = 'https://oxiomseo.vercel.app';
+
+
+  const routes = [
+    '',               // Home
+    '/services',      // Services
+    '/success',       // Success Stories
+    '/process',       // Our Process
+    '/team',          // The Team
+    '/results',       // Our Results
+  ];
+
+  return routes.map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: 'monthly',
+    priority: route === '' ? 1 : 0.8,
+  }));
 }
