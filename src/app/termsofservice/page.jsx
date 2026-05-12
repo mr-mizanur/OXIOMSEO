@@ -89,8 +89,8 @@ const TermsOfService = () => {
               </div>
               <div className="text-left md:text-right">
                 <p className="text-sm text-gray-500 uppercase tracking-widest font-bold mb-2">Contact Support</p>
-                <a href="mailto:support@oxiomseo.com" className="text-blue-500 font-mono font-bold hover:text-white transition-colors">
-                  support@oxiomseo.com
+                <a href="hello.sadekurrahman@gmail.com" className="text-blue-500 font-mono font-bold hover:text-white transition-colors">
+                  hello.sadekurrahman@gmail.com
                 </a>
               </div>
             </div>

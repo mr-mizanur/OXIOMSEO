@@ -87,10 +87,10 @@ const PrivacyPolicy = () => {
               <h3 className="text-white font-bold mb-2">Questions regarding this policy?</h3>
               <p className="text-sm text-gray-400 mb-4">Reach out to our compliance team:</p>
               <a 
-                href="mailto:legal@oxiomseo.com" 
+                href="mailto:hello.sadekurrahman@gmail.com" 
                 className="text-blue-500 font-mono font-bold hover:underline"
               >
-                legal@oxiomseo.com
+                hello.sadekurrahman@gmail.com
               </a>
             </div>
           </footer>
