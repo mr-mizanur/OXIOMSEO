@@ -13,7 +13,7 @@ export default function Footer() {
     event.preventDefault();
     const formData = new FormData(event.target);
 
-    // Web3Forms Access Key
+    
     formData.append("access_key", "82145aaf-b1f3-4fcc-8834-5a0a3701c5b1"); 
     formData.append("subject", "New Newsletter Subscription");
 
@@ -34,7 +34,7 @@ export default function Footer() {
 
       if (res.success) {
         toast.update(subscribeToast, { 
-          render: "Thanks for subscribing! 📧", 
+          render: "Thanks for subscribing! ", 
           type: "success", 
           isLoading: false, 
           autoClose: 3000 

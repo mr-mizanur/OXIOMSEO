@@ -32,7 +32,7 @@ export default function ContactPage() {
 
       if (res.success) {
         toast.update(loadingToast, { 
-          render: "Message sent successfully! 🚀", 
+          render: "Message sent successfully! ", 
           type: "success", 
           isLoading: false, 
           autoClose: 5000 
