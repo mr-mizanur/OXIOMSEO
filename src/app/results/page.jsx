@@ -5,7 +5,7 @@ import Results from "../components/Results";
 import { motion } from "framer-motion";
 
 export default function ResultsPage() {
-  // Hydration এরর এড়ানোর জন্য মাউন্ট চেক (Turbopack এর জন্য সেফ)
+  
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
