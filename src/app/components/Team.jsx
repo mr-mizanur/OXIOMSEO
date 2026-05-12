@@ -28,7 +28,7 @@ export default function Team() {
     <section className="py-12 px-4 max-w-7xl mx-auto">
       <div className="space-y-16">
         
-        {/* Founder Section */}
+        
         {teamMembers.filter(m => m.isFounder).map((founder) => (
           <motion.div 
             key={founder.id}
@@ -44,7 +44,7 @@ export default function Team() {
               className="w-48 h-48 md:w-64 md:h-64 rounded-[2rem] object-cover grayscale hover:grayscale-0 transition-all duration-500"
             />
 
-            {/* Founder Info */}
+        
             <div className="flex-1 text-center md:text-left">
               <span className="text-blue-500 font-bold text-xs uppercase tracking-[0.3em] mb-4 block">
                 The Visionary

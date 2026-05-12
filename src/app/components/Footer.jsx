@@ -60,7 +60,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-[#0a0a0a] border-t border-white/5 pt-20 pb-10 px-4">
-      {/* ToastContainer: এটি মেসেজ দেখানোর জন্য মাস্ট */}
+
       <ToastContainer 
         theme="dark" 
         position="bottom-right" 
@@ -68,18 +68,17 @@ export default function Footer() {
       />
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-        
-        {/* Brand Section */}
+   
         <div className="col-span-1 md:col-span-1">
-          <div className="text-2xl font-black bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent mb-6">
-            OXIOM SEO
-          </div>
+         <span className="text-2xl font-bold tracking-tighter text-white">
+              Oxiom<span className="text-blue-500">SEO</span>
+            </span>
           <p className="text-gray-400 text-sm leading-relaxed">
             Empowering modern businesses with data-driven SEO strategies to dominate search results globally.
           </p>
         </div>
 
-        {/* Quick Links */}
+       
         <div>
           <h4 className="text-white font-bold mb-6">Services</h4>
           <ul className="space-y-4 text-sm text-gray-500">
@@ -90,7 +89,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Contact Info */}
+     
         <div>
           <h4 className="text-white font-bold mb-6">Contact Us</h4>
           <ul className="space-y-4 text-sm text-gray-500">

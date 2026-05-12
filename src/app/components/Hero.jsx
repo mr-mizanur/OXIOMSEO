@@ -1,11 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
     <section className="relative w-full min-h-[70vh] flex flex-col items-center justify-center px-4 pt-32 pb-20">
-      {/* Background Glow */}
+    
       <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-blue-600/20 blur-[120px] rounded-full -z-10" />
       
       <motion.div 
@@ -28,9 +29,9 @@ export default function Hero() {
         </p>
         
         <div className="flex flex-wrap justify-center gap-4">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all hover:scale-105 flex items-center gap-2">
+          <Link href='/contact' className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all hover:scale-105 flex items-center gap-2">
             Get Started Now <ArrowRight size={20} />
-          </button>
+          </Link>
         </div>
       </motion.div>
     </section>

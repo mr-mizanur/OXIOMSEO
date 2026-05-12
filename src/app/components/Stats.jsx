@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 export default function Stats() {
   const stats = [
-    { label: "Success Rate", value: "98%", color: "text-blue-500" },
-    { label: "Leads Generated", value: "250k+", color: "text-cyan-400" },
-    { label: "ROI Increase", value: "10x", color: "text-blue-500" },
+    { label: "Success Rate", value: "99%", color: "text-blue-500" },
+    { label: "Leads Generated", value: "7.4M+", color: "text-cyan-400" },
+    { label: "ROI Increase", value: "40x", color: "text-blue-500" },
   ];
 
   return (

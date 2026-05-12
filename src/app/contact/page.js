@@ -61,7 +61,7 @@ export default function ContactPage() {
       <ToastContainer theme="dark" />
       <div className="max-w-7xl mx-auto">
         
-        {/* Header Section */}
+        
         <div className="text-center mb-20">
           <motion.h1 
             initial={{ opacity: 0, y: -20 }}
@@ -73,11 +73,19 @@ export default function ContactPage() {
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Ready to dominate the search results? Drop us a message and our SEO experts will get back to you within 24 hours.
           </p>
+           <div className="flex justify-center items-center gap-2 mt-8">
+          <div className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+          <div className="w-12 h-[1px] bg-white/20" />
+          <div className="w-2 h-2 rounded-full bg-blue-600/60" />
+          <div className="w-12 h-[1px] bg-white/20" />
+          <div className="w-2 h-2 rounded-full bg-blue-600/30" />
         </div>
+        </div>
+       
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
-          {/* Contact Information Cards */}
+          
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -111,7 +119,7 @@ export default function ContactPage() {
             </div>
           </motion.div>
 
-          {/* Contact Form with Web3Forms */}
+         
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}

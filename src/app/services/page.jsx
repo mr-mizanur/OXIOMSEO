@@ -16,6 +16,13 @@ export default function ServicesPage() {
           outperform your competitors and dominate your industry's search landscape.
         </p>
       </div>
+      <div className="flex justify-center items-center gap-2 mt-8">
+          <div className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+          <div className="w-12 h-[1px] bg-white/20" />
+          <div className="w-2 h-2 rounded-full bg-blue-600/60" />
+          <div className="w-12 h-[1px] bg-white/20" />
+          <div className="w-2 h-2 rounded-full bg-blue-600/30" />
+        </div>
 
    
       <Services />

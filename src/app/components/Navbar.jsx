@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
-import Link from "next/link"; // Link ইমপোর্ট করা হয়েছে
+import Link from "next/link"; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +13,7 @@ const Navbar = () => {
     { name: "Success Stories", path: "/success" },
     { name: "Our Process", path: "/process" },
     { name: "The Team", path: "/team" },
-    { name: "Contact", path: "/contact" },
+    { name: "Our Results", path: "/results" },
   ];
 
   return (
@@ -21,7 +21,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          {/* Logo */}
+          
           <Link href="/" className="flex-shrink-0 flex items-center gap-2 group">
             <div className="w-9 h-9 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-xl flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/20 group-hover:rotate-6 transition-transform">
               O
@@ -31,13 +31,13 @@ const Navbar = () => {
             </span>
           </Link>
 
-          {/* Desktop Nav */}
+         
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
-                  href={link.path} // এখানে .href এর বদলে .path হবে
+                  href={link.path} 
                   className="text-gray-400 hover:text-white px-3 py-2 text-sm font-medium transition-all hover:translate-y-[-2px] block"
                 >
                   {link.name}
@@ -46,7 +46,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Action Button */}
+          
           <div className="hidden md:block">
             <Link href="/contact">
               <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-all flex items-center gap-2 group">
@@ -56,7 +56,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+        
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -68,7 +68,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Panel */}
+
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -81,7 +81,7 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
-                  href={link.path} // ফিক্সড: .path ব্যবহার করা হয়েছে
+                  href={link.path} 
                   className="text-gray-300 hover:text-white block px-3 py-4 text-base font-medium border-b border-white/5"
                   onClick={() => setIsOpen(false)}
                 >

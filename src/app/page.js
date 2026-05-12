@@ -1,6 +1,7 @@
 
 import Hero from "./components/Hero";
 import Process from "./components/Process";
+import Results from "./components/Results";
 import Services from "./components/Services";
 import Stats from "./components/Stats";
 import Success from "./components/Success";
@@ -13,6 +14,7 @@ export default function Home() {
       <Stats />
       <Services />
       <Success />
+      <Results />
       <Process />
       <Team />
     </div>
